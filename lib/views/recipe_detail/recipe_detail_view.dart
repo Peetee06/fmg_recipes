@@ -90,9 +90,9 @@ class RecipeDetailView extends ConsumerWidget {
                     return Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        const Icon(Icons.image),
-                        // Image.network(
-                        //     recipe.imagePath), // Assuming images are hosted online
+                        // const Icon(Icons.image),
+                        Image.network(
+                            'https://img.hellofresh.com/w_400/hellofresh_s3${recipe.imagePath}'), // Assuming images are hosted online
                         const SizedBox(height: 16.0),
                         Text(recipe.name,
                             style: const TextStyle(
