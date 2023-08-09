@@ -91,6 +91,16 @@ class Tag with _$Tag {
   factory Tag.fromJson(Map<String, dynamic> json) => _$TagFromJson(json);
 }
 
+@freezed
+class Images with _$Images {
+  const factory Images({
+    required String path,
+    required String caption,
+  }) = _Images;
+
+  factory Images.fromJson(Map<String, dynamic> json) => _$ImagesFromJson(json);
+}
+
 // @freezed
 // class Step with _$Step {
 //   const factory Step({
@@ -103,12 +113,11 @@ class Tag with _$Tag {
 //   factory Step.fromJson(Map<String, dynamic> json) => _$StepFromJson(json);
 // }
 
-@freezed
-class Images with _$Images {
-  const factory Images({
-    required String path,
-    required String caption,
-  }) = _Images;
+// @freezed
+// class Steps with _$Steps {
+//   const factory Steps({
+//     required List<Step> steps,
+//   }) = _Steps;
 
-  factory Images.fromJson(Map<String, dynamic> json) => _$ImagesFromJson(json);
-}
+//   factory Steps.fromJson(Map<String, dynamic> json) => _$StepsFromJson(json);
+// }

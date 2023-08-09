@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:recipes/models/recipe.dart';
 import 'package:recipes/providers/recipe_provider.dart';
 
 class RecipeDetailView extends ConsumerWidget {
@@ -41,6 +42,25 @@ class RecipeDetailView extends ConsumerWidget {
     }
   }
 
+  void _showStepsModal(BuildContext context, List<dynamic> steps) {
+    showModalBottomSheet(
+      showDragHandle: true,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
+      context: context,
+      builder: (context) {
+        return ListView.builder(
+          itemCount: steps.length,
+          itemBuilder: (context, index) {
+            return ListTile(
+              leading: const Icon(Icons.image),
+              subtitle: Text(steps[index]['instructionsMarkdown']),
+            );
+          },
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final recipesAsyncValue = ref.watch(recipeProvider);
@@ -57,6 +77,8 @@ class RecipeDetailView extends ConsumerWidget {
           final fullTime = prepTime + totalTime;
 
           final difficultyIcon = getDifficultyIcon(recipe.difficulty);
+
+          final steps = json.decode(recipe.steps);
 
           return Padding(
               padding: const EdgeInsets.all(16.0),
@@ -98,7 +120,7 @@ class RecipeDetailView extends ConsumerWidget {
                             ),
                             ElevatedButton(
                               onPressed: () {
-                                print('pressed');
+                                _showStepsModal(context, steps);
                               },
                               child: const Text('Show Steps'),
                             ),
