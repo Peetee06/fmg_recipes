@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:recipes/models/recipe.dart';
 import 'package:recipes/providers/recipe_provider.dart';
 
 class RecipeDetailView extends ConsumerWidget {
@@ -43,6 +42,8 @@ class RecipeDetailView extends ConsumerWidget {
   }
 
   void _showStepsModal(BuildContext context, List<dynamic> steps) {
+    steps.sort((a, b) => a['index'].compareTo(b['index']));
+
     showModalBottomSheet(
       showDragHandle: true,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10.0)),
