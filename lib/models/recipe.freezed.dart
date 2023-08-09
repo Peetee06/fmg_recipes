@@ -32,6 +32,7 @@ mixin _$Recipe {
   List<Ingredients> get ingredients => throw _privateConstructorUsedError;
   List<Tags> get tags => throw _privateConstructorUsedError;
   String get steps => throw _privateConstructorUsedError;
+  String get yields_json => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -55,7 +56,8 @@ abstract class $RecipeCopyWith<$Res> {
       List<Cuisines> cuisines,
       List<Ingredients> ingredients,
       List<Tags> tags,
-      String steps});
+      String steps,
+      String yields_json});
 }
 
 /// @nodoc
@@ -83,6 +85,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
     Object? ingredients = null,
     Object? tags = null,
     Object? steps = null,
+    Object? yields_json = null,
   }) {
     return _then(_value.copyWith(
       id: null == id
@@ -133,6 +136,10 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
               as String,
+      yields_json: null == yields_json
+          ? _value.yields_json
+          : yields_json // ignore: cast_nullable_to_non_nullable
+              as String,
     ) as $Val);
   }
 }
@@ -155,7 +162,8 @@ abstract class _$$_RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       List<Cuisines> cuisines,
       List<Ingredients> ingredients,
       List<Tags> tags,
-      String steps});
+      String steps,
+      String yields_json});
 }
 
 /// @nodoc
@@ -180,6 +188,7 @@ class __$$_RecipeCopyWithImpl<$Res>
     Object? ingredients = null,
     Object? tags = null,
     Object? steps = null,
+    Object? yields_json = null,
   }) {
     return _then(_$_Recipe(
       id: null == id
@@ -230,6 +239,10 @@ class __$$_RecipeCopyWithImpl<$Res>
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
               as String,
+      yields_json: null == yields_json
+          ? _value.yields_json
+          : yields_json // ignore: cast_nullable_to_non_nullable
+              as String,
     ));
   }
 }
@@ -249,7 +262,8 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
       required final List<Cuisines> cuisines,
       required final List<Ingredients> ingredients,
       required final List<Tags> tags,
-      required this.steps})
+      required this.steps,
+      required this.yields_json})
       : _cuisines = cuisines,
         _ingredients = ingredients,
         _tags = tags;
@@ -299,10 +313,12 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
 
   @override
   final String steps;
+  @override
+  final String yields_json;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Recipe(id: $id, headline: $headline, descriptionMarkdown: $descriptionMarkdown, difficulty: $difficulty, imagePath: $imagePath, name: $name, prepTime: $prepTime, totalTime: $totalTime, cuisines: $cuisines, ingredients: $ingredients, tags: $tags, steps: $steps)';
+    return 'Recipe(id: $id, headline: $headline, descriptionMarkdown: $descriptionMarkdown, difficulty: $difficulty, imagePath: $imagePath, name: $name, prepTime: $prepTime, totalTime: $totalTime, cuisines: $cuisines, ingredients: $ingredients, tags: $tags, steps: $steps, yields_json: $yields_json)';
   }
 
   @override
@@ -321,7 +337,8 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
       ..add(DiagnosticsProperty('cuisines', cuisines))
       ..add(DiagnosticsProperty('ingredients', ingredients))
       ..add(DiagnosticsProperty('tags', tags))
-      ..add(DiagnosticsProperty('steps', steps));
+      ..add(DiagnosticsProperty('steps', steps))
+      ..add(DiagnosticsProperty('yields_json', yields_json));
   }
 
   @override
@@ -347,7 +364,9 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
             const DeepCollectionEquality()
                 .equals(other._ingredients, _ingredients) &&
             const DeepCollectionEquality().equals(other._tags, _tags) &&
-            (identical(other.steps, steps) || other.steps == steps));
+            (identical(other.steps, steps) || other.steps == steps) &&
+            (identical(other.yields_json, yields_json) ||
+                other.yields_json == yields_json));
   }
 
   @JsonKey(ignore: true)
@@ -365,7 +384,8 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
       const DeepCollectionEquality().hash(_cuisines),
       const DeepCollectionEquality().hash(_ingredients),
       const DeepCollectionEquality().hash(_tags),
-      steps);
+      steps,
+      yields_json);
 
   @JsonKey(ignore: true)
   @override
@@ -394,7 +414,8 @@ abstract class _Recipe implements Recipe {
       required final List<Cuisines> cuisines,
       required final List<Ingredients> ingredients,
       required final List<Tags> tags,
-      required final String steps}) = _$_Recipe;
+      required final String steps,
+      required final String yields_json}) = _$_Recipe;
 
   factory _Recipe.fromJson(Map<String, dynamic> json) = _$_Recipe.fromJson;
 
@@ -422,6 +443,8 @@ abstract class _Recipe implements Recipe {
   List<Tags> get tags;
   @override
   String get steps;
+  @override
+  String get yields_json;
   @override
   @JsonKey(ignore: true)
   _$$_RecipeCopyWith<_$_Recipe> get copyWith =>
