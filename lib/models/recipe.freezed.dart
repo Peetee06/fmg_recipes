@@ -23,14 +23,14 @@ mixin _$Recipe {
   String get id => throw _privateConstructorUsedError;
   String get headline => throw _privateConstructorUsedError;
   String get description => throw _privateConstructorUsedError;
-  String get difficulty => throw _privateConstructorUsedError;
+  int get difficulty => throw _privateConstructorUsedError;
   String get imagePath => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
   String get prepTime => throw _privateConstructorUsedError;
   String get totalTime => throw _privateConstructorUsedError;
-  List<Cuisine> get cuisines => throw _privateConstructorUsedError;
-  List<Ingredient> get ingredients => throw _privateConstructorUsedError;
-  List<Tag> get tags => throw _privateConstructorUsedError;
+  List<Cuisines> get cuisines => throw _privateConstructorUsedError;
+  List<Ingredients> get ingredients => throw _privateConstructorUsedError;
+  List<Tags> get tags => throw _privateConstructorUsedError;
   String get steps => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -47,14 +47,14 @@ abstract class $RecipeCopyWith<$Res> {
       {String id,
       String headline,
       String description,
-      String difficulty,
+      int difficulty,
       String imagePath,
       String name,
       String prepTime,
       String totalTime,
-      List<Cuisine> cuisines,
-      List<Ingredient> ingredients,
-      List<Tag> tags,
+      List<Cuisines> cuisines,
+      List<Ingredients> ingredients,
+      List<Tags> tags,
       String steps});
 }
 
@@ -100,7 +100,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       imagePath: null == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -120,15 +120,15 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
       cuisines: null == cuisines
           ? _value.cuisines
           : cuisines // ignore: cast_nullable_to_non_nullable
-              as List<Cuisine>,
+              as List<Cuisines>,
       ingredients: null == ingredients
           ? _value.ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<Ingredient>,
+              as List<Ingredients>,
       tags: null == tags
           ? _value.tags
           : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>,
+              as List<Tags>,
       steps: null == steps
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -147,14 +147,14 @@ abstract class _$$_RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
       {String id,
       String headline,
       String description,
-      String difficulty,
+      int difficulty,
       String imagePath,
       String name,
       String prepTime,
       String totalTime,
-      List<Cuisine> cuisines,
-      List<Ingredient> ingredients,
-      List<Tag> tags,
+      List<Cuisines> cuisines,
+      List<Ingredients> ingredients,
+      List<Tags> tags,
       String steps});
 }
 
@@ -197,7 +197,7 @@ class __$$_RecipeCopyWithImpl<$Res>
       difficulty: null == difficulty
           ? _value.difficulty
           : difficulty // ignore: cast_nullable_to_non_nullable
-              as String,
+              as int,
       imagePath: null == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
@@ -217,15 +217,15 @@ class __$$_RecipeCopyWithImpl<$Res>
       cuisines: null == cuisines
           ? _value._cuisines
           : cuisines // ignore: cast_nullable_to_non_nullable
-              as List<Cuisine>,
+              as List<Cuisines>,
       ingredients: null == ingredients
           ? _value._ingredients
           : ingredients // ignore: cast_nullable_to_non_nullable
-              as List<Ingredient>,
+              as List<Ingredients>,
       tags: null == tags
           ? _value._tags
           : tags // ignore: cast_nullable_to_non_nullable
-              as List<Tag>,
+              as List<Tags>,
       steps: null == steps
           ? _value.steps
           : steps // ignore: cast_nullable_to_non_nullable
@@ -236,7 +236,7 @@ class __$$_RecipeCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Recipe implements _Recipe {
+class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
   const _$_Recipe(
       {required this.id,
       required this.headline,
@@ -246,9 +246,9 @@ class _$_Recipe implements _Recipe {
       required this.name,
       required this.prepTime,
       required this.totalTime,
-      required final List<Cuisine> cuisines,
-      required final List<Ingredient> ingredients,
-      required final List<Tag> tags,
+      required final List<Cuisines> cuisines,
+      required final List<Ingredients> ingredients,
+      required final List<Tags> tags,
       required this.steps})
       : _cuisines = cuisines,
         _ingredients = ingredients,
@@ -264,7 +264,7 @@ class _$_Recipe implements _Recipe {
   @override
   final String description;
   @override
-  final String difficulty;
+  final int difficulty;
   @override
   final String imagePath;
   @override
@@ -273,25 +273,25 @@ class _$_Recipe implements _Recipe {
   final String prepTime;
   @override
   final String totalTime;
-  final List<Cuisine> _cuisines;
+  final List<Cuisines> _cuisines;
   @override
-  List<Cuisine> get cuisines {
+  List<Cuisines> get cuisines {
     if (_cuisines is EqualUnmodifiableListView) return _cuisines;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_cuisines);
   }
 
-  final List<Ingredient> _ingredients;
+  final List<Ingredients> _ingredients;
   @override
-  List<Ingredient> get ingredients {
+  List<Ingredients> get ingredients {
     if (_ingredients is EqualUnmodifiableListView) return _ingredients;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_ingredients);
   }
 
-  final List<Tag> _tags;
+  final List<Tags> _tags;
   @override
-  List<Tag> get tags {
+  List<Tags> get tags {
     if (_tags is EqualUnmodifiableListView) return _tags;
     // ignore: implicit_dynamic_type
     return EqualUnmodifiableListView(_tags);
@@ -301,8 +301,27 @@ class _$_Recipe implements _Recipe {
   final String steps;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Recipe(id: $id, headline: $headline, description: $description, difficulty: $difficulty, imagePath: $imagePath, name: $name, prepTime: $prepTime, totalTime: $totalTime, cuisines: $cuisines, ingredients: $ingredients, tags: $tags, steps: $steps)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Recipe'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('headline', headline))
+      ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('difficulty', difficulty))
+      ..add(DiagnosticsProperty('imagePath', imagePath))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('prepTime', prepTime))
+      ..add(DiagnosticsProperty('totalTime', totalTime))
+      ..add(DiagnosticsProperty('cuisines', cuisines))
+      ..add(DiagnosticsProperty('ingredients', ingredients))
+      ..add(DiagnosticsProperty('tags', tags))
+      ..add(DiagnosticsProperty('steps', steps));
   }
 
   @override
@@ -367,14 +386,14 @@ abstract class _Recipe implements Recipe {
       {required final String id,
       required final String headline,
       required final String description,
-      required final String difficulty,
+      required final int difficulty,
       required final String imagePath,
       required final String name,
       required final String prepTime,
       required final String totalTime,
-      required final List<Cuisine> cuisines,
-      required final List<Ingredient> ingredients,
-      required final List<Tag> tags,
+      required final List<Cuisines> cuisines,
+      required final List<Ingredients> ingredients,
+      required final List<Tags> tags,
       required final String steps}) = _$_Recipe;
 
   factory _Recipe.fromJson(Map<String, dynamic> json) = _$_Recipe.fromJson;
@@ -386,7 +405,7 @@ abstract class _Recipe implements Recipe {
   @override
   String get description;
   @override
-  String get difficulty;
+  int get difficulty;
   @override
   String get imagePath;
   @override
@@ -396,16 +415,171 @@ abstract class _Recipe implements Recipe {
   @override
   String get totalTime;
   @override
-  List<Cuisine> get cuisines;
+  List<Cuisines> get cuisines;
   @override
-  List<Ingredient> get ingredients;
+  List<Ingredients> get ingredients;
   @override
-  List<Tag> get tags;
+  List<Tags> get tags;
   @override
   String get steps;
   @override
   @JsonKey(ignore: true)
   _$$_RecipeCopyWith<_$_Recipe> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Cuisines _$CuisinesFromJson(Map<String, dynamic> json) {
+  return _Cuisines.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Cuisines {
+  Cuisine get cuisines => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CuisinesCopyWith<Cuisines> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $CuisinesCopyWith<$Res> {
+  factory $CuisinesCopyWith(Cuisines value, $Res Function(Cuisines) then) =
+      _$CuisinesCopyWithImpl<$Res, Cuisines>;
+  @useResult
+  $Res call({Cuisine cuisines});
+
+  $CuisineCopyWith<$Res> get cuisines;
+}
+
+/// @nodoc
+class _$CuisinesCopyWithImpl<$Res, $Val extends Cuisines>
+    implements $CuisinesCopyWith<$Res> {
+  _$CuisinesCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cuisines = null,
+  }) {
+    return _then(_value.copyWith(
+      cuisines: null == cuisines
+          ? _value.cuisines
+          : cuisines // ignore: cast_nullable_to_non_nullable
+              as Cuisine,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $CuisineCopyWith<$Res> get cuisines {
+    return $CuisineCopyWith<$Res>(_value.cuisines, (value) {
+      return _then(_value.copyWith(cuisines: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_CuisinesCopyWith<$Res> implements $CuisinesCopyWith<$Res> {
+  factory _$$_CuisinesCopyWith(
+          _$_Cuisines value, $Res Function(_$_Cuisines) then) =
+      __$$_CuisinesCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Cuisine cuisines});
+
+  @override
+  $CuisineCopyWith<$Res> get cuisines;
+}
+
+/// @nodoc
+class __$$_CuisinesCopyWithImpl<$Res>
+    extends _$CuisinesCopyWithImpl<$Res, _$_Cuisines>
+    implements _$$_CuisinesCopyWith<$Res> {
+  __$$_CuisinesCopyWithImpl(
+      _$_Cuisines _value, $Res Function(_$_Cuisines) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? cuisines = null,
+  }) {
+    return _then(_$_Cuisines(
+      cuisines: null == cuisines
+          ? _value.cuisines
+          : cuisines // ignore: cast_nullable_to_non_nullable
+              as Cuisine,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Cuisines with DiagnosticableTreeMixin implements _Cuisines {
+  const _$_Cuisines({required this.cuisines});
+
+  factory _$_Cuisines.fromJson(Map<String, dynamic> json) =>
+      _$$_CuisinesFromJson(json);
+
+  @override
+  final Cuisine cuisines;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Cuisines(cuisines: $cuisines)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Cuisines'))
+      ..add(DiagnosticsProperty('cuisines', cuisines));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Cuisines &&
+            (identical(other.cuisines, cuisines) ||
+                other.cuisines == cuisines));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, cuisines);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_CuisinesCopyWith<_$_Cuisines> get copyWith =>
+      __$$_CuisinesCopyWithImpl<_$_Cuisines>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_CuisinesToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Cuisines implements Cuisines {
+  const factory _Cuisines({required final Cuisine cuisines}) = _$_Cuisines;
+
+  factory _Cuisines.fromJson(Map<String, dynamic> json) = _$_Cuisines.fromJson;
+
+  @override
+  Cuisine get cuisines;
+  @override
+  @JsonKey(ignore: true)
+  _$$_CuisinesCopyWith<_$_Cuisines> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -417,7 +591,7 @@ Cuisine _$CuisineFromJson(Map<String, dynamic> json) {
 mixin _$Cuisine {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get imagePath => throw _privateConstructorUsedError;
+  String get iconPath => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -430,7 +604,7 @@ abstract class $CuisineCopyWith<$Res> {
   factory $CuisineCopyWith(Cuisine value, $Res Function(Cuisine) then) =
       _$CuisineCopyWithImpl<$Res, Cuisine>;
   @useResult
-  $Res call({String id, String name, String imagePath, String type});
+  $Res call({String id, String name, String iconPath, String type});
 }
 
 /// @nodoc
@@ -448,7 +622,7 @@ class _$CuisineCopyWithImpl<$Res, $Val extends Cuisine>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? imagePath = null,
+    Object? iconPath = null,
     Object? type = null,
   }) {
     return _then(_value.copyWith(
@@ -460,9 +634,9 @@ class _$CuisineCopyWithImpl<$Res, $Val extends Cuisine>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
+      iconPath: null == iconPath
+          ? _value.iconPath
+          : iconPath // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
           ? _value.type
@@ -479,7 +653,7 @@ abstract class _$$_CuisineCopyWith<$Res> implements $CuisineCopyWith<$Res> {
       __$$_CuisineCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String imagePath, String type});
+  $Res call({String id, String name, String iconPath, String type});
 }
 
 /// @nodoc
@@ -494,7 +668,7 @@ class __$$_CuisineCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? imagePath = null,
+    Object? iconPath = null,
     Object? type = null,
   }) {
     return _then(_$_Cuisine(
@@ -506,9 +680,9 @@ class __$$_CuisineCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      imagePath: null == imagePath
-          ? _value.imagePath
-          : imagePath // ignore: cast_nullable_to_non_nullable
+      iconPath: null == iconPath
+          ? _value.iconPath
+          : iconPath // ignore: cast_nullable_to_non_nullable
               as String,
       type: null == type
           ? _value.type
@@ -520,11 +694,11 @@ class __$$_CuisineCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Cuisine implements _Cuisine {
+class _$_Cuisine with DiagnosticableTreeMixin implements _Cuisine {
   const _$_Cuisine(
       {required this.id,
       required this.name,
-      required this.imagePath,
+      required this.iconPath,
       required this.type});
 
   factory _$_Cuisine.fromJson(Map<String, dynamic> json) =>
@@ -535,13 +709,24 @@ class _$_Cuisine implements _Cuisine {
   @override
   final String name;
   @override
-  final String imagePath;
+  final String iconPath;
   @override
   final String type;
 
   @override
-  String toString() {
-    return 'Cuisine(id: $id, name: $name, imagePath: $imagePath, type: $type)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Cuisine(id: $id, name: $name, iconPath: $iconPath, type: $type)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Cuisine'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('iconPath', iconPath))
+      ..add(DiagnosticsProperty('type', type));
   }
 
   @override
@@ -551,14 +736,14 @@ class _$_Cuisine implements _Cuisine {
             other is _$_Cuisine &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.imagePath, imagePath) ||
-                other.imagePath == imagePath) &&
+            (identical(other.iconPath, iconPath) ||
+                other.iconPath == iconPath) &&
             (identical(other.type, type) || other.type == type));
   }
 
   @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, imagePath, type);
+  int get hashCode => Object.hash(runtimeType, id, name, iconPath, type);
 
   @JsonKey(ignore: true)
   @override
@@ -578,7 +763,7 @@ abstract class _Cuisine implements Cuisine {
   const factory _Cuisine(
       {required final String id,
       required final String name,
-      required final String imagePath,
+      required final String iconPath,
       required final String type}) = _$_Cuisine;
 
   factory _Cuisine.fromJson(Map<String, dynamic> json) = _$_Cuisine.fromJson;
@@ -588,12 +773,171 @@ abstract class _Cuisine implements Cuisine {
   @override
   String get name;
   @override
-  String get imagePath;
+  String get iconPath;
   @override
   String get type;
   @override
   @JsonKey(ignore: true)
   _$$_CuisineCopyWith<_$_Cuisine> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+Ingredients _$IngredientsFromJson(Map<String, dynamic> json) {
+  return _Ingredients.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Ingredients {
+  Ingredient get ingredients => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $IngredientsCopyWith<Ingredients> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $IngredientsCopyWith<$Res> {
+  factory $IngredientsCopyWith(
+          Ingredients value, $Res Function(Ingredients) then) =
+      _$IngredientsCopyWithImpl<$Res, Ingredients>;
+  @useResult
+  $Res call({Ingredient ingredients});
+
+  $IngredientCopyWith<$Res> get ingredients;
+}
+
+/// @nodoc
+class _$IngredientsCopyWithImpl<$Res, $Val extends Ingredients>
+    implements $IngredientsCopyWith<$Res> {
+  _$IngredientsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ingredients = null,
+  }) {
+    return _then(_value.copyWith(
+      ingredients: null == ingredients
+          ? _value.ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as Ingredient,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $IngredientCopyWith<$Res> get ingredients {
+    return $IngredientCopyWith<$Res>(_value.ingredients, (value) {
+      return _then(_value.copyWith(ingredients: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_IngredientsCopyWith<$Res>
+    implements $IngredientsCopyWith<$Res> {
+  factory _$$_IngredientsCopyWith(
+          _$_Ingredients value, $Res Function(_$_Ingredients) then) =
+      __$$_IngredientsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Ingredient ingredients});
+
+  @override
+  $IngredientCopyWith<$Res> get ingredients;
+}
+
+/// @nodoc
+class __$$_IngredientsCopyWithImpl<$Res>
+    extends _$IngredientsCopyWithImpl<$Res, _$_Ingredients>
+    implements _$$_IngredientsCopyWith<$Res> {
+  __$$_IngredientsCopyWithImpl(
+      _$_Ingredients _value, $Res Function(_$_Ingredients) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? ingredients = null,
+  }) {
+    return _then(_$_Ingredients(
+      ingredients: null == ingredients
+          ? _value.ingredients
+          : ingredients // ignore: cast_nullable_to_non_nullable
+              as Ingredient,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Ingredients with DiagnosticableTreeMixin implements _Ingredients {
+  const _$_Ingredients({required this.ingredients});
+
+  factory _$_Ingredients.fromJson(Map<String, dynamic> json) =>
+      _$$_IngredientsFromJson(json);
+
+  @override
+  final Ingredient ingredients;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Ingredients(ingredients: $ingredients)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Ingredients'))
+      ..add(DiagnosticsProperty('ingredients', ingredients));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Ingredients &&
+            (identical(other.ingredients, ingredients) ||
+                other.ingredients == ingredients));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, ingredients);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_IngredientsCopyWith<_$_Ingredients> get copyWith =>
+      __$$_IngredientsCopyWithImpl<_$_Ingredients>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_IngredientsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Ingredients implements Ingredients {
+  const factory _Ingredients({required final Ingredient ingredients}) =
+      _$_Ingredients;
+
+  factory _Ingredients.fromJson(Map<String, dynamic> json) =
+      _$_Ingredients.fromJson;
+
+  @override
+  Ingredient get ingredients;
+  @override
+  @JsonKey(ignore: true)
+  _$$_IngredientsCopyWith<_$_Ingredients> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
@@ -605,7 +949,7 @@ Ingredient _$IngredientFromJson(Map<String, dynamic> json) {
 mixin _$Ingredient {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get imagePath => throw _privateConstructorUsedError;
+  String? get imagePath => throw _privateConstructorUsedError;
   String get type => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -620,7 +964,7 @@ abstract class $IngredientCopyWith<$Res> {
           Ingredient value, $Res Function(Ingredient) then) =
       _$IngredientCopyWithImpl<$Res, Ingredient>;
   @useResult
-  $Res call({String id, String name, String imagePath, String type});
+  $Res call({String id, String name, String? imagePath, String type});
 }
 
 /// @nodoc
@@ -638,7 +982,7 @@ class _$IngredientCopyWithImpl<$Res, $Val extends Ingredient>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? imagePath = null,
+    Object? imagePath = freezed,
     Object? type = null,
   }) {
     return _then(_value.copyWith(
@@ -650,10 +994,10 @@ class _$IngredientCopyWithImpl<$Res, $Val extends Ingredient>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      imagePath: null == imagePath
+      imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -670,7 +1014,7 @@ abstract class _$$_IngredientCopyWith<$Res>
       __$$_IngredientCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({String id, String name, String imagePath, String type});
+  $Res call({String id, String name, String? imagePath, String type});
 }
 
 /// @nodoc
@@ -686,7 +1030,7 @@ class __$$_IngredientCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? imagePath = null,
+    Object? imagePath = freezed,
     Object? type = null,
   }) {
     return _then(_$_Ingredient(
@@ -698,10 +1042,10 @@ class __$$_IngredientCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      imagePath: null == imagePath
+      imagePath: freezed == imagePath
           ? _value.imagePath
           : imagePath // ignore: cast_nullable_to_non_nullable
-              as String,
+              as String?,
       type: null == type
           ? _value.type
           : type // ignore: cast_nullable_to_non_nullable
@@ -712,7 +1056,7 @@ class __$$_IngredientCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Ingredient implements _Ingredient {
+class _$_Ingredient with DiagnosticableTreeMixin implements _Ingredient {
   const _$_Ingredient(
       {required this.id,
       required this.name,
@@ -727,13 +1071,24 @@ class _$_Ingredient implements _Ingredient {
   @override
   final String name;
   @override
-  final String imagePath;
+  final String? imagePath;
   @override
   final String type;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Ingredient(id: $id, name: $name, imagePath: $imagePath, type: $type)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Ingredient'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('imagePath', imagePath))
+      ..add(DiagnosticsProperty('type', type));
   }
 
   @override
@@ -770,7 +1125,7 @@ abstract class _Ingredient implements Ingredient {
   const factory _Ingredient(
       {required final String id,
       required final String name,
-      required final String imagePath,
+      required final String? imagePath,
       required final String type}) = _$_Ingredient;
 
   factory _Ingredient.fromJson(Map<String, dynamic> json) =
@@ -781,13 +1136,161 @@ abstract class _Ingredient implements Ingredient {
   @override
   String get name;
   @override
-  String get imagePath;
+  String? get imagePath;
   @override
   String get type;
   @override
   @JsonKey(ignore: true)
   _$$_IngredientCopyWith<_$_Ingredient> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+Tags _$TagsFromJson(Map<String, dynamic> json) {
+  return _Tags.fromJson(json);
+}
+
+/// @nodoc
+mixin _$Tags {
+  Tag get tags => throw _privateConstructorUsedError;
+
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TagsCopyWith<Tags> get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TagsCopyWith<$Res> {
+  factory $TagsCopyWith(Tags value, $Res Function(Tags) then) =
+      _$TagsCopyWithImpl<$Res, Tags>;
+  @useResult
+  $Res call({Tag tags});
+
+  $TagCopyWith<$Res> get tags;
+}
+
+/// @nodoc
+class _$TagsCopyWithImpl<$Res, $Val extends Tags>
+    implements $TagsCopyWith<$Res> {
+  _$TagsCopyWithImpl(this._value, this._then);
+
+  // ignore: unused_field
+  final $Val _value;
+  // ignore: unused_field
+  final $Res Function($Val) _then;
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+  }) {
+    return _then(_value.copyWith(
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as Tag,
+    ) as $Val);
+  }
+
+  @override
+  @pragma('vm:prefer-inline')
+  $TagCopyWith<$Res> get tags {
+    return $TagCopyWith<$Res>(_value.tags, (value) {
+      return _then(_value.copyWith(tags: value) as $Val);
+    });
+  }
+}
+
+/// @nodoc
+abstract class _$$_TagsCopyWith<$Res> implements $TagsCopyWith<$Res> {
+  factory _$$_TagsCopyWith(_$_Tags value, $Res Function(_$_Tags) then) =
+      __$$_TagsCopyWithImpl<$Res>;
+  @override
+  @useResult
+  $Res call({Tag tags});
+
+  @override
+  $TagCopyWith<$Res> get tags;
+}
+
+/// @nodoc
+class __$$_TagsCopyWithImpl<$Res> extends _$TagsCopyWithImpl<$Res, _$_Tags>
+    implements _$$_TagsCopyWith<$Res> {
+  __$$_TagsCopyWithImpl(_$_Tags _value, $Res Function(_$_Tags) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? tags = null,
+  }) {
+    return _then(_$_Tags(
+      tags: null == tags
+          ? _value.tags
+          : tags // ignore: cast_nullable_to_non_nullable
+              as Tag,
+    ));
+  }
+}
+
+/// @nodoc
+@JsonSerializable()
+class _$_Tags with DiagnosticableTreeMixin implements _Tags {
+  const _$_Tags({required this.tags});
+
+  factory _$_Tags.fromJson(Map<String, dynamic> json) => _$$_TagsFromJson(json);
+
+  @override
+  final Tag tags;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'Tags(tags: $tags)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Tags'))
+      ..add(DiagnosticsProperty('tags', tags));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_Tags &&
+            (identical(other.tags, tags) || other.tags == tags));
+  }
+
+  @JsonKey(ignore: true)
+  @override
+  int get hashCode => Object.hash(runtimeType, tags);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$_TagsCopyWith<_$_Tags> get copyWith =>
+      __$$_TagsCopyWithImpl<_$_Tags>(this, _$identity);
+
+  @override
+  Map<String, dynamic> toJson() {
+    return _$$_TagsToJson(
+      this,
+    );
+  }
+}
+
+abstract class _Tags implements Tags {
+  const factory _Tags({required final Tag tags}) = _$_Tags;
+
+  factory _Tags.fromJson(Map<String, dynamic> json) = _$_Tags.fromJson;
+
+  @override
+  Tag get tags;
+  @override
+  @JsonKey(ignore: true)
+  _$$_TagsCopyWith<_$_Tags> get copyWith => throw _privateConstructorUsedError;
 }
 
 Tag _$TagFromJson(Map<String, dynamic> json) {
@@ -887,7 +1390,7 @@ class __$$_TagCopyWithImpl<$Res> extends _$TagCopyWithImpl<$Res, _$_Tag>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Tag implements _Tag {
+class _$_Tag with DiagnosticableTreeMixin implements _Tag {
   const _$_Tag({required this.id, required this.name, required this.type});
 
   factory _$_Tag.fromJson(Map<String, dynamic> json) => _$$_TagFromJson(json);
@@ -900,8 +1403,18 @@ class _$_Tag implements _Tag {
   final String type;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Tag(id: $id, name: $name, type: $type)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Tag'))
+      ..add(DiagnosticsProperty('id', id))
+      ..add(DiagnosticsProperty('name', name))
+      ..add(DiagnosticsProperty('type', type));
   }
 
   @override
@@ -1039,7 +1552,7 @@ class __$$_ImagesCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_Images implements _Images {
+class _$_Images with DiagnosticableTreeMixin implements _Images {
   const _$_Images({required this.path, required this.caption});
 
   factory _$_Images.fromJson(Map<String, dynamic> json) =>
@@ -1051,8 +1564,17 @@ class _$_Images implements _Images {
   final String caption;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'Images(path: $path, caption: $caption)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'Images'))
+      ..add(DiagnosticsProperty('path', path))
+      ..add(DiagnosticsProperty('caption', caption));
   }
 
   @override
