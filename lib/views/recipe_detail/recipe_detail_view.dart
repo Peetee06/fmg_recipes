@@ -67,7 +67,7 @@ class RecipeDetailView extends ConsumerWidget {
     final recipesAsyncValue = ref.watch(recipeProvider);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Recipe Details')),
+      appBar: AppBar(title: const Text('Rezept Details')),
       body: recipesAsyncValue.when(
         data: (recipes) {
           final recipe = recipes.firstWhere((r) => r.id == recipeId);
@@ -109,7 +109,7 @@ class RecipeDetailView extends ConsumerWidget {
                               children: [
                                 difficultyIcon,
                                 const SizedBox(height: 8.0),
-                                const Text('Difficulty'),
+                                const Text('Schwierigkeit'),
                               ],
                             ),
                             Column(
@@ -123,7 +123,7 @@ class RecipeDetailView extends ConsumerWidget {
                               onPressed: () {
                                 _showStepsModal(context, steps);
                               },
-                              child: const Text('Show Steps'),
+                              child: const Text('Schritte anzeigen'),
                             ),
                           ],
                         )
