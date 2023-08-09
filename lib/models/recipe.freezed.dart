@@ -22,7 +22,7 @@ Recipe _$RecipeFromJson(Map<String, dynamic> json) {
 mixin _$Recipe {
   String get id => throw _privateConstructorUsedError;
   String get headline => throw _privateConstructorUsedError;
-  String get description => throw _privateConstructorUsedError;
+  String get descriptionMarkdown => throw _privateConstructorUsedError;
   int get difficulty => throw _privateConstructorUsedError;
   String get imagePath => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
@@ -46,7 +46,7 @@ abstract class $RecipeCopyWith<$Res> {
   $Res call(
       {String id,
       String headline,
-      String description,
+      String descriptionMarkdown,
       int difficulty,
       String imagePath,
       String name,
@@ -73,7 +73,7 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
   $Res call({
     Object? id = null,
     Object? headline = null,
-    Object? description = null,
+    Object? descriptionMarkdown = null,
     Object? difficulty = null,
     Object? imagePath = null,
     Object? name = null,
@@ -93,9 +93,9 @@ class _$RecipeCopyWithImpl<$Res, $Val extends Recipe>
           ? _value.headline
           : headline // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      descriptionMarkdown: null == descriptionMarkdown
+          ? _value.descriptionMarkdown
+          : descriptionMarkdown // ignore: cast_nullable_to_non_nullable
               as String,
       difficulty: null == difficulty
           ? _value.difficulty
@@ -146,7 +146,7 @@ abstract class _$$_RecipeCopyWith<$Res> implements $RecipeCopyWith<$Res> {
   $Res call(
       {String id,
       String headline,
-      String description,
+      String descriptionMarkdown,
       int difficulty,
       String imagePath,
       String name,
@@ -170,7 +170,7 @@ class __$$_RecipeCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? headline = null,
-    Object? description = null,
+    Object? descriptionMarkdown = null,
     Object? difficulty = null,
     Object? imagePath = null,
     Object? name = null,
@@ -190,9 +190,9 @@ class __$$_RecipeCopyWithImpl<$Res>
           ? _value.headline
           : headline // ignore: cast_nullable_to_non_nullable
               as String,
-      description: null == description
-          ? _value.description
-          : description // ignore: cast_nullable_to_non_nullable
+      descriptionMarkdown: null == descriptionMarkdown
+          ? _value.descriptionMarkdown
+          : descriptionMarkdown // ignore: cast_nullable_to_non_nullable
               as String,
       difficulty: null == difficulty
           ? _value.difficulty
@@ -240,7 +240,7 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
   const _$_Recipe(
       {required this.id,
       required this.headline,
-      required this.description,
+      required this.descriptionMarkdown,
       required this.difficulty,
       required this.imagePath,
       required this.name,
@@ -262,7 +262,7 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
   @override
   final String headline;
   @override
-  final String description;
+  final String descriptionMarkdown;
   @override
   final int difficulty;
   @override
@@ -302,7 +302,7 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Recipe(id: $id, headline: $headline, description: $description, difficulty: $difficulty, imagePath: $imagePath, name: $name, prepTime: $prepTime, totalTime: $totalTime, cuisines: $cuisines, ingredients: $ingredients, tags: $tags, steps: $steps)';
+    return 'Recipe(id: $id, headline: $headline, descriptionMarkdown: $descriptionMarkdown, difficulty: $difficulty, imagePath: $imagePath, name: $name, prepTime: $prepTime, totalTime: $totalTime, cuisines: $cuisines, ingredients: $ingredients, tags: $tags, steps: $steps)';
   }
 
   @override
@@ -312,7 +312,7 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
       ..add(DiagnosticsProperty('type', 'Recipe'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('headline', headline))
-      ..add(DiagnosticsProperty('description', description))
+      ..add(DiagnosticsProperty('descriptionMarkdown', descriptionMarkdown))
       ..add(DiagnosticsProperty('difficulty', difficulty))
       ..add(DiagnosticsProperty('imagePath', imagePath))
       ..add(DiagnosticsProperty('name', name))
@@ -332,8 +332,8 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
             (identical(other.id, id) || other.id == id) &&
             (identical(other.headline, headline) ||
                 other.headline == headline) &&
-            (identical(other.description, description) ||
-                other.description == description) &&
+            (identical(other.descriptionMarkdown, descriptionMarkdown) ||
+                other.descriptionMarkdown == descriptionMarkdown) &&
             (identical(other.difficulty, difficulty) ||
                 other.difficulty == difficulty) &&
             (identical(other.imagePath, imagePath) ||
@@ -356,7 +356,7 @@ class _$_Recipe with DiagnosticableTreeMixin implements _Recipe {
       runtimeType,
       id,
       headline,
-      description,
+      descriptionMarkdown,
       difficulty,
       imagePath,
       name,
@@ -385,7 +385,7 @@ abstract class _Recipe implements Recipe {
   const factory _Recipe(
       {required final String id,
       required final String headline,
-      required final String description,
+      required final String descriptionMarkdown,
       required final int difficulty,
       required final String imagePath,
       required final String name,
@@ -403,7 +403,7 @@ abstract class _Recipe implements Recipe {
   @override
   String get headline;
   @override
-  String get description;
+  String get descriptionMarkdown;
   @override
   int get difficulty;
   @override

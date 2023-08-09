@@ -22,7 +22,8 @@ class Locations extends BeamLocation<BeamState> {
         key: ValueKey('home'),
         child: HomeView(),
       ),
-      if (state.uri.pathSegments.contains('recipe'))
+      if (state.uri.pathSegments.contains('recipe') &&
+          state.pathParameters.containsKey('recipeId'))
         BeamPage(
           key: ValueKey('recipe-${state.pathParameters['recipeId']}'),
           child: RecipeDetailView(

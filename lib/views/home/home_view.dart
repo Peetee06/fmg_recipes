@@ -20,11 +20,13 @@ class HomeView extends ConsumerWidget {
             return ListTile(
               title: Text(recipe.name),
               subtitle: Text(recipe.headline),
-              leading: Image.network(
-                  recipe.imagePath), // Assuming images are hosted online
+              leading: const Icon(Icons.image),
+              // leading: Image.network(
+              //     recipe.imagePath), // Assuming images are hosted online
               onTap: () {
                 // Navigate to recipe detail view when tapped
-                Beamer.of(context).beamToNamed('/recipe/${recipe.id}');
+                String path = '/recipe/${recipe.id}';
+                Beamer.of(context).beamToNamed(path);
               },
             );
           },

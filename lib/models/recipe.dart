@@ -9,7 +9,7 @@ class Recipe with _$Recipe {
   const factory Recipe({
     required String id,
     required String headline,
-    required String description,
+    required String descriptionMarkdown,
     required int difficulty,
     required String imagePath,
     required String name,
